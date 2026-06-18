@@ -70,6 +70,12 @@ var animationData = {"v":"5.10.0","fr":29.9985961914062,"ip":0,"op":692.99067171
         }
     });
 
+    anim.addEventListener('enterFrame', function (e) {
+        if (e.currentTime >= totalFrames / 1.2) {
+			revealEnd();
+        }
+    });
+
     anim.addEventListener('complete', function () {
         revealMiddle();
         revealEnd();
